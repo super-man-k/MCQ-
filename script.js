@@ -5,14 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
         ...hardwareQuestions,
         ...softwareQuestions,
         ...osQuestions,
-        ...networkQuestions
+        ...networkQuestions,
+        ...nsquestions
     ];
 
     const questionsByCategory = {
         hardware: hardwareQuestions,
         software: softwareQuestions,
         os: osQuestions,
-        network: networkQuestions
+        network: networkQuestions,
+        numbersys: nsquestions
     };
 
     // ==================== DOM Elements ====================
@@ -93,7 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const softwareQs = shuffleArray(questionsByCategory.software).slice(0, 2);
             const osQs = shuffleArray(questionsByCategory.os).slice(0, 3);
             const networkQs = shuffleArray(questionsByCategory.network).slice(0, 2);
-            quizQuestions = shuffleArray([...hardwareQs, ...softwareQs, ...osQs, ...networkQs]);
+            const nsQs = shuffleArray(questionsByCategory.numbersys).slice(0, 2);
+            quizQuestions = shuffleArray([...hardwareQs, ...softwareQs, ...osQs, ...networkQs, ...nsQs]);
 
         } else if (currentMode === 'topic-wise') {
             const topicButton = document.querySelector(`.topic-btn[data-topic='${currentTopic}']`);
@@ -211,4 +214,5 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.mode-btn, .topic-btn').forEach(btn => btn.classList.remove('active'));
         topicSelection.classList.add('hide');
     }
+
 });
