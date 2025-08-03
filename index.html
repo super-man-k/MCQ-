@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline MCQ Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="start-screen" class="screen">
+            <h1>MCQ Quiz 📝</h1>
+            <div class="mode-selection">
+                <h3>Select Mode to Start:</h3>
+                <button class="mode-btn" data-mode="rapid-fire">🔥 Rapid Fire</button>
+                <button class="mode-btn" data-mode="overall">🌍 Overall</button>
+                <button class="mode-btn" data-mode="topic-wise">📚 Topic Wise</button>
+            </div>
+            <div id="topic-selection" class="hide">
+                <h3>Select Topic to Start:</h3>
+                <div id="topic-buttons-container">
+                    <button class="topic-btn" data-topic="hardware">Hardware</button>
+                    <button class="topic-btn" data-topic="software">Software</button>
+                    <button class="topic-btn" data-topic="os">OS</button>
+                    <button class="topic-btn" data-topic="network">Network</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="screen hide">
+            <div class="quiz-header">
+                <h2 id="quiz-title">Quiz</h2>
+                <div id="timer">05:00</div>
+            </div>
+            <div id="questions-container">
+                </div>
+            <button id="submit-btn">Submit Quiz</button>
+        </div>
+
+        <div id="result-screen" class="screen hide">
+            <h1>Quiz Result 🎉</h1>
+            <div id="score-details">
+                </div>
+            <div>
+                <button id="review-btn">Review Answers</button>
+                <button id="restart-btn">Restart</button>
+            </div>
+        </div>
+        
+        <div id="review-screen" class="screen hide">
+            <h1>Review Your Answers</h1>
+            <div id="review-container">
+                </div>
+            <button id="back-to-result-btn">Back to Result</button>
+        </div>
+    </div>
+
+    <script src="hardware.js"></script>
+    <script src="software.js"></script>
+    <script src="os.js"></script>
+    <script src="network.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
